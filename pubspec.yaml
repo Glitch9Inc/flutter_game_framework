@@ -8,11 +8,19 @@ documentation: https://github.com/Glitch9Inc/flutter_game_framework#readme
 publish_to: "none" # Remove this line to publish to pub.dev
 
 environment:
-  sdk: ^3.5.0
+  sdk: ">=3.3.4 <4.0.0"
+  flutter: ">=1.17.0"
 
 # Add regular dependencies here.
 dependencies:
-  # path: ^1.8.0
+  flutter:
+    sdk: flutter
+
+  # for game audio (BGM, SFX, Voice, etc)
+  just_audio: ^0.9.39
+
+  flutter_corelib: 
+    path: ../flutter_corelib
 
 dev_dependencies:
   lints: ^4.0.0
