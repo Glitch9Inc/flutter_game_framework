@@ -18,6 +18,7 @@ dependencies:
 
   # for game audio (BGM, SFX, Voice, etc)
   just_audio: ^0.9.39
+  dio: ^5.5.0+1
 
   flutter_corelib: 
     path: ../flutter_corelib

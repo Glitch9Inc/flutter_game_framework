@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:get/get.dart';
+import 'package:flutter_corelib/flutter_corelib.dart';
 
 class RxStamina {
   /// ~분에 1씩 회복되는지 param

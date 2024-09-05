@@ -23,9 +23,13 @@ class IAPPriceContainer extends StatelessWidget {
 
     return StrokeText(
       price,
-      style: Get.textTheme.bodyMedium!.copyWith(fontSize: fontSize),
+      textStyle: Get.textTheme.bodyMedium!.copyWith(fontSize: fontSize),
       maxLines: 1,
-      strokeStyle: StrokeStyle.blurred,
+      strokeStyle: StrokeStyle(
+        color: backgroundColor,
+        width: 2,
+        type: StrokeType.blurred,
+      ),
     );
   }
 

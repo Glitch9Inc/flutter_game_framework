@@ -1,4 +1,4 @@
-library;
+library flutter_game_framework;
 
 export 'src/flutter_game_framework_base.dart';
 
@@ -31,12 +31,12 @@ export 'src/controllers/in_app_purchase_controller.dart';
 export 'src/audio/audio_manager.dart';
 export 'src/audio/audio_file.dart';
 export 'src/audio/audio_type.dart';
+export 'src/audio/voice_data.dart';
 
 // io
 export 'src/io/csv_x/csvx_controller.dart';
 export 'src/io/csv_x/csvx_database.dart';
 export 'src/io/csv_x/csvx_localization.dart';
-export 'src/io/models/file_location.dart';
 
 // etc
 export 'src/debug_console/debug_console_controller.dart';

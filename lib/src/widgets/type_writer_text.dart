@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_corelib/flutter_corelib.dart';
-import '../../../../../flutter_game_framework/lib/src/audio/audio_file.dart';
+import '../audio/audio_file.dart';
 
 class TypeWriterText extends StatefulWidget {
   /// The text to type.

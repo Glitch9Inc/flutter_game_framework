@@ -1,13 +1,11 @@
 import 'dart:io' as io;
 
+import 'package:dio/dio.dart';
 import 'package:flutter_corelib/flutter_corelib.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_game_framework/flutter_game_framework.dart';
-import 'package:flutter_game_framework/src/io/models/file_location.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:dio/dio.dart';
 
-import 'audio_type.dart';
 export 'audio_type.dart';
 
 class AudioFile {
@@ -19,18 +17,7 @@ class AudioFile {
   final AudioPlayer player;
 
   AudioFile({required this.location, required this.path, required this.type, this.downloadUrl})
-      : player = getAudioPlayer(type);
-
-  static AudioPlayer getAudioPlayer(AudioType type) {
-    switch (type) {
-      case AudioType.bgm:
-        return AudioManager.bgm;
-      case AudioType.sfx:
-        return AudioManager.sfx;
-      case AudioType.voice:
-        return AudioManager.voice;
-    }
-  }
+      : player = AudioManager.getAudioPlayer(type);
 
   Future<void> play() async {
     if (!await _exists()) throw Exception('File does not exist');

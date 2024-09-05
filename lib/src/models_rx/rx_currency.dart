@@ -90,8 +90,8 @@ extension PriceExt on RxCurrency {
         ),
         StrokeText(
           value.toString(),
-          style: Get.textTheme.bodyMedium!.copyWith(fontSize: fontSize),
-          strokeStyle: StrokeStyle.blurred,
+          textStyle: Get.textTheme.bodyMedium!.copyWith(fontSize: fontSize),
+          strokeStyle: StrokeStyle(type: StrokeType.blurred, color: backgroundColor),
         ),
       ],
     );
