@@ -1,43 +1,37 @@
-library flutter_game_framework;
+/// Reusable game-domain models, services, and widgets for Flutter apps.
+library;
 
-export 'src/flutter_game_framework_base.dart';
-
-// enums
-export 'src/models_enum/gender.dart';
-export 'src/models_enum/payment_method.dart';
-export 'src/models_enum/work_place.dart';
-export 'src/models_enum/day_period.dart';
-export 'src/models_enum/rarity.dart';
-export 'src/models_enum/priority.dart';
-
-// rx (reactive) models
-export 'src/models_rx/rx_currency.dart';
-export 'src/models_rx/rx_stamina.dart';
-export 'src/models_rx/rx_experience.dart';
-
-// models
-export 'src/models_util/change_values.dart';
-export 'src/models_util/product.dart';
-
-// widgets
-export 'src/widgets/iap_price_container.dart';
-export 'src/widgets/scratch_card.dart';
-export 'src/widgets/type_writer_text.dart';
-
-// controllers
-export 'src/controllers/in_app_purchase_controller.dart';
-
-// audio
-export 'src/audio/audio_manager.dart';
-export 'src/audio/audio_file.dart';
-export 'src/audio/audio_type.dart';
-export 'src/audio/voice_data.dart';
-
-// io
-export 'src/io/csv_x/csvx_controller.dart';
-export 'src/io/csv_x/csvx_database.dart';
-export 'src/io/csv_x/csvx_localization.dart';
-
-// etc
-export 'src/debug_console/debug_console_controller.dart';
-export 'src/debug_console/commands/console_command.dart';
+export 'src/core/enums/day_period.dart';
+export 'src/core/enums/gender.dart';
+export 'src/core/enums/payment_method.dart';
+export 'src/core/enums/priority.dart';
+export 'src/core/enums/work_place.dart';
+export 'src/core/errors/insufficient_asset_exception.dart';
+export 'src/core/game_manager.dart';
+export 'src/features/game_content/collectible_image.dart';
+export 'src/features/game_content/gacha_pool.dart';
+export 'src/features/game_content/game_asset.dart';
+export 'src/features/game_content/mixins/expirable.dart';
+export 'src/features/game_content/mixins/stackable.dart';
+export 'src/features/game_item/consumable_item.dart';
+export 'src/features/game_item/item.dart';
+export 'src/features/game_item/item_impl.dart';
+export 'src/features/game_item/item_properties.dart';
+export 'src/features/game_item/item_script.dart';
+export 'src/features/game_item/item_type.dart';
+export 'src/features/game_item/stackable_item.dart';
+export 'src/features/game_shop/controllers/in_app_purchase_controller.dart';
+export 'src/features/game_shop/models/price.dart';
+export 'src/features/game_shop/models/purchase_result.dart';
+export 'src/features/game_shop/models/shop_item.dart';
+export 'src/features/game_shop/models/subscription.dart';
+export 'src/features/game_shop/widgets/price_text.dart';
+export 'src/features/game_shop/widgets/shop_item_card.dart';
+export 'src/features/game_shop/widgets/shop_item_image.dart';
+export 'src/features/loading/loading.dart';
+export 'src/features/unlocking/unlock_condition.dart';
+export 'src/shared/models/counters.dart';
+export 'src/shared/models/experience.dart';
+export 'src/shared/models/stamina.dart';
+export 'src/shared/widgets/animated_counter.dart';
+export 'src/shared/widgets/gif/gif_lib.dart';

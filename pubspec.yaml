@@ -16,13 +16,31 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # for game audio (BGM, SFX, Voice, etc)
-  just_audio: ^0.9.39
-  dio: ^5.5.0+1
+  # Core libraries
+  http: ^1.2.1
 
-  flutter_corelib: 
-    path: ../flutter_corelib
+  # for game audio (BGM, SFX, Voice, etc)
+  # just_audio: ^0.9.42
+  dio: ^5.5.0+1
+  in_app_purchase: ^3.2.0 # Monitization
+
+  flutter_corelib:
+    path: ../g9_flutter_corelib
+
+  flutter_corelib_ui:
+    path: ../g9_flutter_corelib_ui
+
+  dart_database:
+    path: ../g9_dart_database
+
+  dart_firetask:
+    path: ../g9_dart_firetask
 
 dev_dependencies:
   lints: ^4.0.0
   test: ^1.24.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

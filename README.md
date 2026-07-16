@@ -1,39 +1,67 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# flutter_game_framework
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
+An internal Flutter package containing reusable game-domain models, services,
+and widgets used by Routina and related Glitch9 projects.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+This package was split from `flutter_corelib` so game-specific code can evolve
+without expanding the general-purpose core library.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+The package exposes one supported public entry point:
 
 ```dart
-const like = 'sample';
+import 'package:flutter_game_framework/flutter_game_framework.dart';
 ```
 
-## Additional information
+Avoid importing files below `lib/src` directly. Add a symbol to
+`lib/flutter_game_framework.dart` when it needs to become part of the public
+API.
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+## Package structure
+
+```text
+lib/
+├── flutter_game_framework.dart      # Public API
+└── src/                             # Internal implementation
+    ├── core/                        # Cross-feature foundations
+    │   ├── enums/
+    │   ├── errors/
+    │   └── localization/
+    ├── features/                    # Feature-first game modules
+    │   ├── game_content/
+    │   ├── game_item/
+    │   ├── game_shop/
+    │   │   ├── controllers/
+    │   │   ├── models/
+    │   │   └── widgets/
+    │   ├── loading/
+    │   └── unlocking/
+    └── shared/                      # Reusable models and widgets
+        ├── models/
+        └── widgets/
+```
+
+### Placement rules
+
+- Put code owned by one feature under `src/features/<feature>`.
+- Keep cross-feature infrastructure in `src/core`.
+- Put generic reusable value objects and UI in `src/shared`.
+- Use relative imports between internal files.
+- Export only intentionally supported APIs from `flutter_game_framework.dart`.
+- Split a feature into `models`, `controllers`, or `widgets` only when the
+  feature is large enough to benefit from those boundaries.
+
+## Development
+
+From this directory, run:
+
+```shell
+flutter pub get
+dart format --output=none --set-exit-if-changed lib test
+flutter analyze
+flutter test
+```
+
+The package is private (`publish_to: none`) and currently depends on sibling
+Glitch9 packages through local path dependencies.
